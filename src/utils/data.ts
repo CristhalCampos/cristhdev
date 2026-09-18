@@ -1,4 +1,4 @@
-import { Sparkles, Globe, MessageSquare, CalendarDays, CreditCard, Wrench } from "lucide-react";
+import { Sparkles, MessageSquare, CalendarDays, CreditCard, Wrench } from "lucide-react";
 import { createElement } from "react";
 
 export const certifications = [

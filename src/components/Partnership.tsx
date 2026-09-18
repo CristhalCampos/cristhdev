@@ -20,7 +20,7 @@ export default function Partnership() {
             ¿Eres diseñador y <span className="text-[#fe735e]">pierdes clientes</span>?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Muchos diseñadores pierden proyectos completos porque sus clientes les piden "la web lista para publicar"
+            Muchos diseñadores pierden proyectos completos porque sus clientes les piden &quot;la web lista para publicar&quot;
             y ellos solo pueden entregar el diseño. <strong>Yo soy tu socio técnico para que eso termine.</strong>
           </p>
         </motion.div>

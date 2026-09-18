@@ -10,26 +10,34 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState<boolean | null>(null);
 
-  // Leer preferencia guardada al montar (evita hydration mismatch)
+  // Initialize theme on mount - read from localStorage or system preference
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
     
-    setDarkMode(isDark);
+    // Apply theme to document and storage
     document.documentElement.classList.toggle('dark', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    // Update state after DOM is updated
+    requestAnimationFrame(() => {
+      setDarkMode(isDark);
+    });
   }, []);
 
-  // Actualizar DOM y localStorage cuando cambie el estado
+  // Handle theme toggle changes
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+    if (darkMode !== null) {
+      document.documentElement.classList.toggle('dark', darkMode);
+      localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+    }
   }, [darkMode]);
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+    <ThemeContext.Provider value={{ darkMode: darkMode ?? false, setDarkMode }}>
       {children}
     </ThemeContext.Provider>
   );

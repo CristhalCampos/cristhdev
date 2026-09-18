@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeContextProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
   title: "CristhDev",
@@ -8,8 +9,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es">
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="es" suppressHydrationWarning>
+      <body className="antialiased">
+        <ThemeContextProvider>
+          {children}
+        </ThemeContextProvider>
+      </body>
     </html>
   );
 }

@@ -4,27 +4,33 @@ import { Users, DollarSign, ArrowRight } from 'lucide-react';
 
 export default function Partnership() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#1f8ff5]/10 to-[#fe735e]/10 dark:from-[#1f8ff5]/5 dark:to-[#fe735e]/5">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-(--color-primary)/10 to-(--color-secondary)/10">
       <div className="max-w-7xl mx-auto">
+        
+        {/* Encabezado Principal */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#fe735e] text-white text-sm font-semibold mb-4">
+          {/* Badge Superior */}
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-(--color-secondary) text-white text-sm font-semibold mb-4 shadow-sm">
             <Users className="w-5 h-5 mr-2" />
             Para Diseñadores
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-            ¿Eres diseñador y <span className="text-[#fe735e]">pierdes clientes</span>?
+          
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-(--color-foreground)">
+            ¿Eres diseñador y <span className="text-(--color-secondary)">pierdes clientes</span>?
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          
+          <p className="text-xl text-(--color-fg-secondary) max-w-3xl mx-auto leading-relaxed">
             Muchos diseñadores pierden proyectos completos porque sus clientes les piden &quot;la web lista para publicar&quot;
-            y ellos solo pueden entregar el diseño. <strong>Yo soy tu socio técnico para que eso termine.</strong>
+            y ellos solo pueden entregar el diseño. <strong className="text-(--color-foreground)">Yo soy tu socio técnico para que eso termine.</strong>
           </p>
         </motion.div>
 
+        {/* Grid de Tarjetas de Beneficios */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {[
             {
@@ -47,15 +53,24 @@ export default function Partnership() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              className="p-8 rounded-3xl bg-white dark:bg-gray-800 shadow-xl border border-gray-200 dark:border-gray-700"
+              className="p-8 rounded-3xl bg-(--color-background) shadow-xl border border-(--color-bg-secondary)/20"
             >
-              <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#1f8ff5] to-[#fe735e] flex items-center justify-center text-white mb-6">
+              {/* Icono con Degradado */}
+              <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-(--color-primary) to-(--color-secondary) flex items-center justify-center text-white mb-6">
                 {item.icon}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{item.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{item.description}</p>
-              <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
-                <p className="text-sm font-semibold text-green-800 dark:text-green-200">
+              
+              <h3 className="text-2xl font-bold text-(--color-foreground) mb-4">
+                {item.title}
+              </h3>
+              
+              <p className="text-(--color-fg-secondary) mb-4 leading-relaxed">
+                {item.description}
+              </p>
+              
+              {/* Contenedor de Beneficio Destacado (Adaptable) */}
+              <div className="p-4 rounded-xl bg-(--color-secondary)/10 border border-(--color-secondary)/20">
+                <p className="text-sm font-bold text-(--color-secondary)">
                    {item.benefit}
                 </p>
               </div>
@@ -63,6 +78,7 @@ export default function Partnership() {
           ))}
         </div>
 
+        {/* Botón de Llamada a la Acción */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -71,12 +87,13 @@ export default function Partnership() {
         >
           <a
             href="#contacto"
-            className="px-8 py-4 rounded-full bg-linear-to-r from-[#1f8ff5] to-[#fe735e] text-white font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center space-x-2"
+            className="px-8 py-4 rounded-full bg-linear-to-r from-(--color-primary) to-(--color-secondary) text-white font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center space-x-2 cursor-pointer"
           >
             <span>Hablemos de cómo trabajar juntos</span>
             <ArrowRight className="w-6 h-6" />
           </a>
         </motion.div>
+
       </div>
     </section>
   );

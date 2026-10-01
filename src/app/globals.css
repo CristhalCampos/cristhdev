@@ -9,10 +9,10 @@
   --color-fg-secondary: #424242;
   /* Colores Principales (Títulos, Botones, Acentos) */
   --color-primary: #1f8ff5;
-  --color-secondary: #fe735e;
+  --color-secondary: #ff6b00;
   /* Variantes para HOVER/DARKER (Modo Claro) */
   --color-primary-darker: #1067d3;
-  --color-secondary-darker: #f5573e;
+  --color-secondary-darker: #cc5600;
   /* Fuentes */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -26,10 +26,10 @@
   --color-foreground: #ededed;
   --color-fg-secondary: #bdbdbd;
   /* Colores Principales (Títulos, Botones, Acentos) */
-  --color-primary: #fe735e;
+  --color-primary: #ff6b00;
   --color-secondary: #1f8ff5;
   /* Variantes para HOVER/DARKER (Modo Oscuro) */
-  --color-primary-darker: #f5573e;
+  --color-primary-darker: #cc5600;
   --color-secondary-darker: #1067d3;
 }
 

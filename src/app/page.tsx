@@ -13,7 +13,7 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#f2f2f2] dark:bg-[#1e1e1e] text-[#171717] dark:text-[#ededed] transition-colors duration-300">
+    <div className="min-h-screen bg-(--color-background) text-(--color-foreground) transition-colors duration-300">
       <GiveawayBanner />
       <Navbar />
       <main className="pt-28">

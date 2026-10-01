@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" suppressHydrationWarning className="">
+    <html lang="es" suppressHydrationWarning>
       <body className="antialiased">
         <ThemeContextProvider>
           {children}
